@@ -1,0 +1,28 @@
+.letter-box {
+    width: 30px;
+    height: 40px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 3px;
+    text-align: center;
+    background-color: #f2f2f9;
+    margin: 2px;
+    overflow: hidden;
+}
+
+.letter-box:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 5px #888;
+    cursor: text;
+}
+
+.letter-box.active {
+    background-color: rgb(247, 205, 158);
+}
+
+.letter-box-space {
+    display: inline-block;
+    width: 25px;
+    height: 40px;
+}

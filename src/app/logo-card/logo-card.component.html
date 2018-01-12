@@ -1,0 +1,15 @@
+<input type="text" (keyup)="TextInputChanged($event)">
+<div class="container">
+  <div>
+    <img class="logo" src="/assets/images/{{ image }}">  
+  </div>
+  <div class="word-container">
+    <letter-box *ngFor="let letter of word.split(''); let i = index"
+      [letter]="letter"
+      [index]="i"
+      [has-focus]="i == focusedLetterBoxIndex"
+      (change)="OnLetterBoxFocusChanged($event)"></letter-box>
+  </div>
+</div>
+
+

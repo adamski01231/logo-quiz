@@ -1,4 +1,5 @@
-<logo-card [word]="'Johnnie Walker'" [image]="'bmw.jpg'"></logo-card>
-<logo-card [word]="'Carlsberg'" [image]="'ford.jpg'"></logo-card>
+<ng-container *ngFor="let w of words; let i = index">
+    <logo-card *ngIf="index == i" [word]="w.word" [image]="w.logo" (next)="NextLogo()"></logo-card>    
+</ng-container>
 
 

@@ -3,4 +3,10 @@
   [class.letter-box-space]="letter == ' '"
   [class.active]="hasFocus"
   (click)="Click()"
-  >{{ letter }}</div>
+  tabindex="1"
+  (keyup)="KeyPress($event)"
+  @flipInY>
+  <!-- {{ letter }} -->
+  {{ letter2 }}
+  <div class="cursor blink"></div>
+</div>

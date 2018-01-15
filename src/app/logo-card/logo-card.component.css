@@ -2,6 +2,7 @@
     width: 600px;
     margin: 0 auto;
     border: 1px solid #888;
+    background-color:rgba(255, 255, 255, 0.25);
     border-radius: 10px;
     margin: 10px;
     padding: 10px;
@@ -16,4 +17,55 @@
 
 .word-container {
     text-align: center;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+
+    padding: 8px;
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-bottom: -10px;
+    // background-color: rgba(0, 0, 0, 0.3);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.btn {
+    display: inline-block;
+    width: 30%;
+    font-weight: 600;
+    border: 1px solid #fff;;
+    border-radius: 5px;
+    background-color: #fff;
+    text-align: center;
+    padding: 5px 10px; 
+    box-shadow: 0 0 10px #333;
+    cursor: pointer;
+}
+
+.btn-confirm {
+    background-color: #2EE80F;
+    border-left-color: rgb(168, 240, 155);
+    border-top-color: rgb(168, 240, 155);
+    border-right-color: rgb(37, 161, 12);
+    border-bottom-color: rgb(37, 161, 12);
+    color: #333;
+    
+}
+
+.btn-cancel {
+    background-color: #E84D27;
+    border-left-color: rgb(233, 106, 77);
+    border-top-color: rgb(233, 106, 77);
+    border-right-color: rgb(204, 67, 40);
+    border-bottom-color: rgb(204, 67, 40);
+    color: #fff;
+}
+
+.btn:active {
+    box-shadow: 0 0 3px #333;
+    transform: scale(0.95);
 }

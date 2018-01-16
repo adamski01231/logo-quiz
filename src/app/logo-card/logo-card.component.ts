@@ -1,4 +1,4 @@
-import { KeyboardCommands } from './../enums';
+import { KeyboardCommands, AnswerStatuses } from './../enums';
 import { trigger, animate, style, transition, keyframes } from '@angular/animations';
 import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 
@@ -82,17 +82,21 @@ export class LogoCardComponent implements OnInit {
   }
 
   ValidateAnswer() {
+    let status: AnswerStatuses;
+
     if (this.answer.join('').toLowerCase() === this.word.toLowerCase()) {
-      console.log('PRAWIDŁOWO: "' + this.answer.join('') + '"');
+      // console.log('PRAWIDŁOWO: "' + this.answer.join('') + '"');
+      status = AnswerStatuses.Correct;
     } else {
-      console.log('ŹLE: "' + this.answer.join('') + '"');
+      // console.log('ŹLE: "' + this.answer.join('') + '"');
+      status = AnswerStatuses.Invalid;
     }
 
-    this.next.emit();
+    this.next.emit(status);
   }
 
   SkipToNext() {
-    this.next.emit();
+    this.next.emit(AnswerStatuses.Skipped);
   }
 
 }

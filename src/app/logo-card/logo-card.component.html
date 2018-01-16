@@ -1,7 +1,9 @@
 <div class="container">
-  <div @logo>
-    <img class="logo" src="assets/images/{{ image }}">  
-  </div>
+  <div class="logo-container">
+    <div @logo>
+      <img class="logo" src="assets/images/{{ image }}">  
+    </div>
+  </div>  
   <div class="word-container">
     <letter-box *ngFor="let letter of word.split(''); let i = index"
       [letter]="letter"

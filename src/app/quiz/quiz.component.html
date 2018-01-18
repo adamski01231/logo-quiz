@@ -1,0 +1,38 @@
+<div id="row1">
+  <div id="col1">
+    <div class="container wide">
+        <ng-container *ngFor="let w of words; let i = index">
+            <logo-card *ngIf="index == i && !isCompleted" [word]="w.word" [image]="w.logo" (next)="NextLogo($event)"></logo-card>    
+        </ng-container>
+        <div class="congrats" *ngIf="isCompleted">
+          Gratulacje !!!
+          <div>
+            <img src="assets/images2/thumbs-up.png" alt="">
+          </div>
+        </div>
+    </div>    
+  </div>
+  <div id="col2">
+      <div class="container narrow timer">
+          <stopwatch (timeup)="Completed()"></stopwatch>
+      </div>
+      <div class="container points">
+          <div class="header">Poprawne</div>
+          <div class="content">
+              {{ correctAnswersCount }}
+          </div>
+      </div>
+      <div class="container points">
+          <div class="header">Błędne</div>
+          <div class="content">
+              {{ invalidAnswersCount }}
+          </div>
+      </div>
+      <div class="container points">
+          <div class="header">Pominięte</div>
+          <div class="content">
+              {{ skippedAnswersCount }}
+          </div>
+      </div>
+  </div>
+</div>

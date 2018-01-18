@@ -9,9 +9,24 @@ body {
 html {
     background: linear-gradient(-10deg, #d53835,  #f2cc45);
     min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
 }
 
 #row1 {
+    display: flex;
+}
+
+#col1 {
     display: flex;
 }
 
@@ -20,8 +35,7 @@ html {
     flex-direction: column;
 }
 
-.container {
-    width: 150px;
+.container {    
     margin: 0 auto;
     border: 1px solid #888;
     background-color:rgba(255, 255, 255, 0.25);
@@ -31,8 +45,16 @@ html {
     position: relative;
 }
 
+.narrow {
+    width: 150px;
+}
+
+.wide {
+    width: 600px;
+}
+
 .header {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.15);
     margin: -10px -10px 0 -10px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -55,6 +77,15 @@ html {
 }
 
 .points .content {
+    font-size: 3em;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+    text-shadow: 2px 2px #888;
+}
+
+.congrats {
+    width: 100%;
     font-size: 3em;
     font-weight: 600;
     color: #fff;

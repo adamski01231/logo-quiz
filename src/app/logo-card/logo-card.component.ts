@@ -9,7 +9,7 @@ import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
   animations: [
     trigger('logo', [
       transition('void => *', [
-        style({ transform: 'scale3d(1, 1, 1) translateX(-120%)' }),
+        style({ transform: 'scale3d(1, 1, 1) translateX(-1000px)' }),
         animate('1.2s ease-in', keyframes([
           style({ offset: .3, transform: 'scale3d(1.25, 0.75, 1)' }),
           style({ offset: .4, transform: 'scale3d(0.75, 1.25, 1)' }),

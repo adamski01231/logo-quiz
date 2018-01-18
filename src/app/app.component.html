@@ -1,31 +1,4 @@
 
-<div id="row1">
-    <ng-container *ngFor="let w of words; let i = index">
-        <logo-card *ngIf="index == i" [word]="w.word" [image]="w.logo" (next)="NextLogo($event)"></logo-card>    
-    </ng-container>
-    <div id="col2">
-        <div class="container timer">
-            15:00
-        </div>
-        <div class="container points">
-            <div class="header">Poprawne</div>
-            <div class="content">
-                {{ correctAnswersCount }}
-            </div>
-        </div>
-        <div class="container points">
-            <div class="header">Błędne</div>
-            <div class="content">
-                {{ invalidAnswersCount }}
-            </div>
-        </div>
-        <div class="container points">
-            <div class="header">Pominięte</div>
-            <div class="content">
-                {{ skippedAnswersCount }}
-            </div>
-        </div>
-    </div>
-</div>
+<quiz></quiz>
 
 

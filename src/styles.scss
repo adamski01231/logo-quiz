@@ -2,11 +2,38 @@
 @Import "https://fonts.googleapis.com/css?family=Open+Sans";
 @Import "https://fonts.googleapis.com/css?family=Indie+Flower";
 
-body {
-    font-family: 'Open Sans', sans-serif;
+@mixin clearfix {
+    &::after {
+        content: "";
+        clear: both;
+        display: table;        
+    }
+}
+
+
+@import 'css/_variables.scss';
+@import 'css/_grid.scss';
+@import 'css/_button.scss';
+
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
 }
 
 html {
+    font-size: 62.5%; // This defines whant 1rem is
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+.quiz-container {
     background: linear-gradient(-10deg, #d53835,  #f2cc45);
     min-height: 100vh;
     display: flex;
@@ -24,14 +51,18 @@ html {
 
 #row1 {
     display: flex;
+    width: 80%;
+    height: 80%;
 }
 
 #col1 {
     display: flex;
+    width: 75%;
 }
 
 #col2 {
     display: flex;
+    align-items: stretch;
     flex-direction: column;
 }
 
@@ -46,11 +77,15 @@ html {
 }
 
 .narrow {
-    width: 150px;
+    width: 15rem;
 }
 
 .wide {
-    width: 600px;
+    width: 80%;
+}
+
+.full-width {
+    width: 100%;
 }
 
 .header {
@@ -59,25 +94,25 @@ html {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     padding: 3px 5px;
+    font-size: 1.6rem;
     font-weight: 600;
     text-align: center;
 }
 
 .timer {
-    height: 10%;
-    font-size: 2em;
+    font-size: 4rem;
     font-weight: 600;
     color: #fff;
     text-align: center;
     text-shadow: 2px 2px #888;
 }
 
-.points {
-    height: 20%;
-}
+// .points {
+//     height: 20%;
+// }
 
 .points .content {
-    font-size: 3em;
+    font-size: 4.5rem;
     font-weight: 600;
     color: #fff;
     text-align: center;
@@ -86,7 +121,7 @@ html {
 
 .congrats {
     width: 100%;
-    font-size: 3em;
+    font-size: 5rem;
     font-weight: 600;
     color: #fff;
     text-align: center;

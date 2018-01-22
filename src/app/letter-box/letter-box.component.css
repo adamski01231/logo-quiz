@@ -1,21 +1,22 @@
 .letter-box {
-    font-size: 2em;
-    width: 30px;
-    height: 40px;
+    font-size: 4.5rem;
+    width: 5rem;
+    height: 7rem;
     border: 1px solid #555;
     border-radius: 5px;
     display: inline-block;
     padding: 3px;
     text-align: center;
     background-color: #f2f2f9;
-    margin: 2px;
+    margin: .3rem;
     overflow: hidden;
     outline: none;
+    position: relative;
 }
 
 .letter-box:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 5px #888;
+    box-shadow: 0 0 1.5rem rgba(0, 0, 0, .8);
     cursor: text;
 }
 
@@ -23,20 +24,26 @@
     background-color: rgb(196, 195, 195);
 }
 
-.letter-box-space {
+.letter-box.active::after {
+    content: "";
+    position: absolute;
+    background-color: orangered;
     display: inline-block;
-    width: 25px;
-    height: 40px;
-}
-
-.letter-box.active .cursor {
-    position: relative;
-    top: 30px;
-    width: 85%;
-    margin: 0 auto;
-    height: 3px;
+    width: 80%;
+    height: .3rem;
+    bottom: .8rem;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: #333;
     opacity: 0.8;
+    animation: blink .7s infinite;
+}
+
+
+.letter-box-space {
+    display: inline-block;
+    width: 4rem;
+    height: 7rem;
 }
 
 @keyframes blink {
@@ -51,8 +58,4 @@
     to {
         opacity: 0.8;
     }
-}
-
-.blink {
-    animation: blink .7s infinite;
 }

@@ -1,0 +1,167 @@
+
+@import '../../css/_variables.scss'; 
+
+.header {
+    background-image: linear-gradient(to right bottom, rgba($color-main-light, .8), rgba($color-main-dark, .8)) ,url(../../assets/images/working.jpg);
+    background-position: top;
+    background-size: cover;
+    height: 90vh;
+    transform-origin: 0 0;
+    transform: skewY(-7deg);
+    position: relative;
+
+    &__logo-box {
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+        height: 6rem;
+        transform: skewY(7deg);
+        border-radius: 3px;
+        overflow: hidden;
+        box-shadow: 0 0 3rem rgba($color-black, .8);
+        z-index: 10;
+    }
+
+    &__logo {
+        height: 6rem;
+    }
+
+    &__text-box {
+        color: $color-white;
+        position: absolute;
+        top: 50%;
+        left: 40%;
+        text-align: center;
+        transform: translate(-50%, -50%) skewY(7deg);
+
+        &--primary {
+            font-size: 16rem;
+            text-transform: uppercase;
+            animation-name: moveInLeft;
+            animation-duration: 1s;
+            animation-timing-function: ease-out;
+            margin-left: -10rem;
+        }
+
+        &--secondary {
+            font-size: 12rem;
+            text-transform: uppercase;
+            animation-name: moveInRight;
+            animation-duration: 1s;
+            animation-timing-function: ease-out;
+            margin-right: -20rem;
+        }
+    }
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-20rem);
+    }
+
+    80% {
+        transform: translateX(4rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(20rem);
+    }
+
+    80% {
+        transform: translateX(-4rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.logo-sets {
+    position: absolute;
+    bottom: 6rem;
+    right: 6rem;
+    // transform: translate(30rem, -20rem);
+}
+
+.card {
+    // FUNCTIONALITY
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    position: relative;
+    height: 20rem;
+
+    &__side {
+        height: 20rem;
+        transition: all .8s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        backface-visibility: hidden;
+        border-radius: 3px;
+        overflow: hidden;
+        box-shadow: 0 0 4rem rgba($color-black, .6);
+
+        &--front {
+            background-color: $color-white;
+        }
+
+        &--back {
+            transform: rotateY(180deg);
+
+            &-1 {
+                background-image: linear-gradient(to right bottom, $color-orange-light, $color-orange-dark);
+            }
+
+            &-2 {
+                background-image: linear-gradient(to right bottom, $color-green-light, $color-green-dark);
+            }
+
+            &-3 {
+                background-image: linear-gradient(to right bottom, $color-blue-light, $color-blue-dark);
+            }
+        }
+    }
+
+    &:hover &__side--front {
+        transform: rotateY(-180deg);
+    }
+
+    &:hover &__side--back {
+        transform: rotateY(0);
+    }
+
+    &__content {
+        padding: 1rem;
+        text-align: center;
+    }
+
+    &__set-word {
+        font-size: 2.8rem;
+    }
+
+    &__set-version {
+        font-size: 8rem;
+    }
+
+    &__set-time {
+        font-size: 2rem;
+        color: $color-white;
+    }
+
+    &__set-number {
+        font-size: 2rem;
+        color: $color-white;
+        padding-bottom: 6rem;
+    }
+}

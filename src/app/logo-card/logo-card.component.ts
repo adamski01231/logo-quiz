@@ -5,7 +5,7 @@ import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 @Component({
   selector: 'logo-card',
   templateUrl: './logo-card.component.html',
-  styleUrls: ['./logo-card.component.css'],
+  styleUrls: ['./logo-card.component.scss'],
   animations: [
     trigger('logo', [
       transition('void => *', [

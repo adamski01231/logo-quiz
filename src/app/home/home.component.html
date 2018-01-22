@@ -1,0 +1,71 @@
+<div class="header">
+  <div class="header__logo-box">
+    <img src="../../assets/images/gfk-logo.jpg" alt="GfK logo" class="header__logo">
+  </div>
+  <div class="header__text-box">
+      <h1 class="header__text-box--primary">Logo</h1>
+      <h2 class="header__text-box--secondary">Quiz</h2>
+  </div>
+</div>
+
+<section class="logo-sets">
+  <div class="row">
+      <div class="col-1-of-3">
+        <div class="card">
+            <div class="card">
+              <div class="card__side card__side--front">
+                <div class="card__content">
+                    <p class="card__set-word">Zestaw</p>
+                    <p class="card__set-version">A</p>
+                </div>
+              </div>
+              <div class="card__side card__side--back card__side--back-1">
+                <div class="card__content">
+                    <p class="card__set-time">15 minut</p>
+                    <p class="card__set-number">100 zadań</p>
+                    <a [routerLink]="['/quiz', 'a']" class="btn btn--white">Zagraj</a>                
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="col-1-of-3">
+        <div class="card">
+            <div class="card">
+              <div class="card__side card__side--front">
+                  <div class="card__content">
+                      <p class="card__set-word">Zestaw</p>
+                      <p class="card__set-version">B</p>
+                  </div>
+              </div>
+              <div class="card__side card__side--back card__side--back-2">
+                <div class="card__content">
+                    <p class="card__set-time">15 minut</p>
+                    <p class="card__set-number">100 zadań</p>
+                    <a [routerLink]="['/quiz', 'b']" class="btn btn--white">Zagraj</a>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="col-1-of-3">
+        <div class="card">
+            <div class="card">
+              <div class="card__side card__side--front">
+                  <div class="card__content">
+                      <p class="card__set-word">Zestaw</p>
+                      <p class="card__set-version">C</p>
+                  </div>
+              </div>
+              <div class="card__side card__side--back card__side--back-3">
+                <div class="card__content">
+                    <p class="card__set-time">15 minut</p>
+                    <p class="card__set-number">100 zadań</p>
+                    <a [routerLink]="['/quiz', 'c']" class="btn btn--white">Zagraj</a>                
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+  </div>
+</section>

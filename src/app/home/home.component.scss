@@ -6,6 +6,7 @@
     background-position: top;
     background-size: cover;
     height: 90vh;
+    width: 100%;
     transform-origin: 0 0;
     transform: skewY(-7deg);
     position: relative;
@@ -33,6 +34,7 @@
         left: 40%;
         text-align: center;
         transform: translate(-50%, -50%) skewY(7deg);
+        text-shadow: 1rem 1rem 2.5rem rgba($color-black, .7);
 
         &--primary {
             font-size: 16rem;

@@ -6,7 +6,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./stopwatch.component.css']
 })
 export class StopwatchComponent implements OnInit {
-  limit: number = 5*60*1000;
+  limit: number = 15*60*1000;
   startTime: number;
   finishTime: number;
   timeLeft = { m:0, s:0 };

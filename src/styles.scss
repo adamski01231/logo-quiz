@@ -34,7 +34,7 @@ body {
 }
 
 .quiz-container {
-    background: linear-gradient(-10deg, #d53835,  #f2cc45);
+    background: linear-gradient(to right bottom,  #f2cc45, #d53835);
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -69,7 +69,7 @@ body {
 .container {    
     margin: 0 auto;
     border: 1px solid #888;
-    background-color:rgba(255, 255, 255, 0.25);
+    background-color:rgba(255, 255, 255, 0.35);
     border-radius: 10px;
     margin: 5px;
     padding: 10px;
@@ -88,7 +88,7 @@ body {
     width: 100%;
 }
 
-.header {
+.container .header {
     background-color: rgba(0, 0, 0, 0.15);
     margin: -10px -10px 0 -10px;
     border-top-left-radius: 10px;

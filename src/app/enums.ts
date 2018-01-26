@@ -4,6 +4,7 @@ export enum KeyboardCommands {
   CarretRight = 3,
   InsertLetter = 4,
   DeleteLetter = 5,
+  Enter = 6
 }
 export enum AnswerStatuses {
   Correct = 1,

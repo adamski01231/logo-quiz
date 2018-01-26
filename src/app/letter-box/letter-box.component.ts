@@ -10,7 +10,7 @@ import { Component, ElementRef, EventEmitter, Input, OnInit, Output } from '@ang
     trigger('flipInY', [
       transition('void => *', [
         style({ transform: 'perspective(400px) rotate3d(0, 1, 0, 90deg)' }),
-        animate('1s 750ms ease-in', keyframes([
+        animate('1s 1s ease-in', keyframes([
           style({ offset: .4, transform: 'perspective(400px) rotate3d(0, 1, 0, -40deg)' }),
           style({ offset: .6, transform: 'perspective(400px) rotate3d(0, 1, 0, 20deg)' }),
           style({ offset: .8, transform: 'perspective(400px) rotate3d(0, 1, 0, -10deg)' }),
@@ -59,6 +59,7 @@ export class LetterBoxComponent implements OnInit {
 
   KeyPress(event) {
     event.stopPropagation();
+    event.preventDefault();
 
     const c = event.keyCode;
     if ((c >= 65 && c <= 90) || (c >= 97) && (c <= 122)) {
@@ -74,6 +75,9 @@ export class LetterBoxComponent implements OnInit {
     }
     if (c === 39) {
       this.change.emit({ index: this.index, letter: this.letter2, command: KeyboardCommands.CarretRight });
+    }
+    if (c === 13) {
+      this.change.emit({ index: this.index, letter: this.letter2, command: KeyboardCommands.Enter });
     }
   }
 }

@@ -4,7 +4,7 @@
   [class.active]="hasFocus"
   (click)="Click()"
   tabindex="1"
-  (keyup)="KeyPress($event)"
+  (keydown)="KeyPress($event)"
   @flipInY>
   <!-- {{ letter }} -->
   {{ letter2 }}

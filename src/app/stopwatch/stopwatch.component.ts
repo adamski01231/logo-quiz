@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 
 @Component({
   selector: 'stopwatch',
@@ -6,13 +6,14 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./stopwatch.component.css']
 })
 export class StopwatchComponent implements OnInit {
-  limit: number = 15*60*1000;
+  limit: number = 12*60*1000;
   startTime: number;
   finishTime: number;
   timeLeft = { m:0, s:0 };
   isRunning = false;
   _timerHandle;
 
+  @Input() countdownEnabled: boolean;
   @Output() timeup = new EventEmitter();
 
   constructor() { }
@@ -47,10 +48,12 @@ export class StopwatchComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.Start();
+    if (this.countdownEnabled)
+      this.Start();
   }
 
   ngOnDestroy() {
-    clearInterval(this._timerHandle);
+    if (this._timerHandle)
+      clearInterval(this._timerHandle);
   }
 }

@@ -25,11 +25,13 @@ import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 export class LogoCardComponent implements OnInit {
   @Input() word: string;
   @Input() image: string;
+  @Input() version: string;
 
   @Output() next = new EventEmitter();
 
   focusedLetterBoxIndex = 0;
   answer = [];
+  correctAnswerVisible = false;
 
   constructor() { }
 
@@ -80,7 +82,16 @@ export class LogoCardComponent implements OnInit {
         break;
       case KeyboardCommands.Enter:
         // if (params.index == this.word.length - 1 &&  this.answer[params.index] != ' ') {
-          this.ValidateAnswer();        
+          let emptyFieldsCount = 0;
+          for (let i = 0; i < this.word.length; i++) {
+            if (this.word[i] != ' ' && this.answer[i] == ' ') {
+              emptyFieldsCount++;
+            }
+          }
+          
+          if (emptyFieldsCount == 0) 
+            this.ValidateAnswer();
+            
         // }
         break;
     }
@@ -102,6 +113,10 @@ export class LogoCardComponent implements OnInit {
 
   SkipToNext() {
     this.next.emit(AnswerStatuses.Skipped);
+  }
+
+  ShowCorrectAnswer() {
+    this.correctAnswerVisible = true;
   }
 
 }

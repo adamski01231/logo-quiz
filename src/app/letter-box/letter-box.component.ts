@@ -40,6 +40,8 @@ export class LetterBoxComponent implements OnInit {
         this.el.nativeElement.querySelector('div').focus();
       }
     }
+  
+  @Input() correctLetterVisible: boolean;
 
   @Output() change = new EventEmitter();
 

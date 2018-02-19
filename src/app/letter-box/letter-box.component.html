@@ -6,6 +6,6 @@
   tabindex="1"
   (keydown)="KeyPress($event)"
   @flipInY>
-  <!-- {{ letter }} -->
+  <span *ngIf="correctLetterVisible">{{ letter }}</span>
   {{ letter2 }}
 </div>

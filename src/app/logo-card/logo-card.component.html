@@ -3,18 +3,22 @@
     <div @logo>
       <img class="logo" src="assets/logos/{{ image }}">  
     </div>
-  </div>  
+  </div>
   <div class="word-container">
     <letter-box *ngFor="let letter of word.split(''); let i = index"
       [letter]="letter"
       [index]="i"
       [has-focus]="i == focusedLetterBoxIndex"
+      [correctLetterVisible]="correctAnswerVisible"
       (change)="OnLetterBoxFocusChanged($event)">
     </letter-box>
   </div>
   <div class="footer">
-    <div class="btn2 btn2-cancel" (click)="SkipToNext()">Nie znam odpowiedzi.<br/>Pokaż kolejne logo.</div>
-    <div class="btn2 btn2-confirm" (click)="ValidateAnswer()">Zatwierdź odpowiedź i przejdź dalej.</div>
+    <div *ngIf="version!='C'" class="btn2 btn2-cancel" (click)="SkipToNext()">Nie znam odpowiedzi.<br/>Pokaż kolejne logo</div>
+    <div *ngIf="version!='C'" class="btn2 btn2-confirm" (click)="ValidateAnswer()">Zatwierdź odpowiedź</div>
+    
+    <div *ngIf="version=='C'" class="btn2 btn2-cancel btn2--high" (click)="ShowCorrectAnswer()">Pokaż prawidłową odpowiedź</div>
+    <div *ngIf="version=='C'" class="btn2 btn2-confirm btn2--high" (click)="SkipToNext()">Kolejne logo</div>
   </div>
 </div>
 

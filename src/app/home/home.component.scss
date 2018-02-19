@@ -100,10 +100,10 @@
     perspective: 150rem;
     -moz-perspective: 150rem;
     position: relative;
-    height: 20rem;
+    height: 22rem;
 
     &__side {
-        height: 20rem;
+        height: 22rem;
         transition: all .8s ease;
         position: absolute;
         top: 0;
@@ -153,7 +153,7 @@
     }
 
     &__set-version {
-        font-size: 8rem;
+        font-size: 10rem;
     }
 
     &__set-time {

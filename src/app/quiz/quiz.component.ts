@@ -3,8 +3,8 @@ import { AnswerStatuses, KeyboardCommands } from './../enums';
 import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Http } from '@angular/http';
-import { Observable } from "rxjs/Observable";
-import "rxjs/add/observable/combineLatest";
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/combineLatest';
 
 @Component({
   selector: 'quiz',
@@ -36,7 +36,7 @@ export class QuizComponent implements OnInit {
   ngOnInit() {
     Observable.combineLatest([
       this.http.get('assets/logos.json'),
-      this.route.paramMap  
+      this.route.paramMap
     ])
     .subscribe(combined => {
       this.zestawy = combined[0].json();
@@ -49,13 +49,13 @@ export class QuizComponent implements OnInit {
 
         if (result.length > 0) {
           this.words = this.Shuffle(result[0].words);
-          if (this.version=="C") { this.words.splice(29, 0, { "word": "Enel", "logo": "283_enel.png" }); }
+          if (this.version === "C") { this.words.splice(29, 0, { "word": "Enel", "logo": "283.png" }); }
           this.leftAnswersCount = this.words.length;
         }
     });
   }
 
-  private _keydown(event: KeyboardEvent) {    
+  private _keydown(event: KeyboardEvent) {
     let prevent = [8]
       .find(no => no === event.keyCode);
     if (prevent) { event.preventDefault(); }

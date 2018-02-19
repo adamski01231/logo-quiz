@@ -35,10 +35,13 @@ body {
 
 .quiz-container {
     background: linear-gradient(to right bottom,  #f2cc45, #d53835);
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
+    flex-direction: row;
+    -ms-flex-direction: row;
     align-items: center;
     justify-content: center;
+    -ms-flex-align: center;
 
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */

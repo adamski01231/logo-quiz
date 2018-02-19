@@ -34,7 +34,7 @@
         left: 40%;
         text-align: center;
         transform: translate(-50%, -50%) skewY(7deg);
-        text-shadow: 1rem 1rem 2.5rem rgba($color-black, .7);
+        text-shadow: 1rem 1rem 2rem rgba($color-black, .7);
 
         &--primary {
             font-size: 16rem;
@@ -98,7 +98,7 @@
 .card {
     // FUNCTIONALITY
     perspective: 150rem;
-    -moz-perspective: 150rem;
+    // -moz-perspective: 150rem;
     position: relative;
     height: 22rem;
 
@@ -109,17 +109,19 @@
         top: 0;
         left: 0;
         width: 100%;
-        backface-visibility: hidden;
+        // backface-visibility: hidden;
         border-radius: 3px;
         overflow: hidden;
         box-shadow: 0 0 4rem rgba($color-black, .6);
 
         &--front {
             background-color: $color-white;
+            z-index: 100;
         }
 
         &--back {
             transform: rotateY(180deg);
+            z-index: 80;
 
             &-1 {
                 background-image: linear-gradient(to right bottom, $color-orange-light, $color-orange-dark);
@@ -137,10 +139,12 @@
 
     &:hover &__side--front {
         transform: rotateY(-180deg);
+        z-index: 80;
     }
 
     &:hover &__side--back {
         transform: rotateY(0);
+        z-index: 100;
     }
 
     &__content {
